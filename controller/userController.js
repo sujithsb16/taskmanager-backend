@@ -264,7 +264,9 @@ results.prev = {
 };
      }
 
-     
+     const pendingTasks = tasks?.filter((task) => !task.status);
+      
+     results.pendingTasks = pendingTasks.length
 
     results.result = tasks.slice(startIndex,lastIndex);
     res.status(200).json(results);
@@ -292,4 +294,5 @@ module.exports = {
   deleteTask,
   updateTask,
   setRemainder,
+  pagination,
 };
